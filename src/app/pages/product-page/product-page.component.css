@@ -1,0 +1,11 @@
+.wrapper {
+  padding: 0 5% 5% 5%;
+}
+.images {
+  width: 100%;
+}
+.image {
+  height: auto;
+  max-width: 300px;
+}
+

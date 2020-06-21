@@ -1,0 +1,14 @@
+<div class="card" *ngIf="product">
+    <div class="card-img">
+        <img src="{{ this.product.images[0].photo}}">
+    </div>
+    <div class="card-block">
+        <h4 class="card-title">{{ this.product.title }}</h4>
+        <h5 class="price">{{ this.product.price }} UAH</h5>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-sm btn-link" *ngIf="!inCart" (click)="addToCart()">В корзину</a>
+        <p *ngIf="inCart">Товар в корзине</p>
+        <a [routerLink]="['/product/',product.id]" class="btn btn-sm btn-link">Подробнее</a>
+    </div>
+</div>

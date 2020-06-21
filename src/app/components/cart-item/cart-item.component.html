@@ -1,0 +1,20 @@
+<div class="card">
+            <div class="card-block">
+                <div class="card-title">
+                    {{cartItem.product.title}}
+                </div>
+                <div class="card-text">
+                  <form clrForm>
+                    <clr-input-container>
+                      <label for="quantity" class="clr-control-label">Кол-во</label>
+                      <input clrInput placeholder="Количество" min="1" type="number" name="quantity" id="quantity" #input="ngModel" [(ngModel)]="cartItem.quantity" />
+                      </clr-input-container>
+                  </form>
+                    <p>Цена: {{cartItem.product.price * cartItem.quantity}} UAH</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-link" (click)="removeItem()">Удалить</button>
+                <button class="btn btn-sm btn-link" (click)="saveItem()">Сохранить</button>
+            </div>
+</div>

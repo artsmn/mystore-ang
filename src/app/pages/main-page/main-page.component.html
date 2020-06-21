@@ -1,0 +1,27 @@
+<app-main-menu></app-main-menu>
+
+<div class="container">
+  <clr-alert *ngIf="ordered" [clrAlertType]="'success'">
+    <clr-alert-item>
+        <span class="alert-text">
+            Заказ в обработке
+        </span>
+    </clr-alert-item>
+</clr-alert>
+  <form>
+        <label class="my-label" for="category">Категория</label>
+        <select (change)="categorySelect($event.target.value)" [(ngModel)]="pickedCategory" class="my-select" name="Категори" id="category">
+          <option value="0">Всё</option>
+          <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+        </select>
+  </form>
+
+  <div class="clr-row">
+    <div class="clr-col-lg-3" *ngFor="let product of products">
+      <app-single-product [product]=product></app-single-product>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,10 @@
+img {
+  margin: 0 auto;
+  height: auto;
+  width: auto;
+  max-height: 300px;
+  min-height: 100px;
+}
+.price {
+  color: hsl(9, 100%, 30%);
+}

@@ -1,0 +1,45 @@
+<app-main-menu></app-main-menu>
+<div class="container">
+  <div class="clr-row">
+    <div class="clr-col-lg-6">
+      <div *ngIf="cart">
+        <h1>Корзина</h1>
+        <h4>Итого: {{cart.price}} UAH</h4>
+        <div class="items">
+          <app-cart-item *ngFor="let item of cart.items" (onItemUpdate)="updateCart()" [cartItem]="item"></app-cart-item>
+        </div>
+      </div>
+    </div>
+
+    <div class="clr-col-lg-6">
+      <h1>Оформить заказ</h1>
+
+      <form clrForm [formGroup]="orderForm">
+        <clr-input-container>
+            <label>Имя</label>
+            <input clrInput type="text" name="name" formControlName="name"/>
+        </clr-input-container>
+        <clr-input-container>
+            <label>Фамилия</label>
+            <input clrInput type="text" name="surname" formControlName="surname" />
+        </clr-input-container>
+        <clr-input-container>
+          <label>Почта</label>
+          <input clrInput type="email" name="email" formControlName="email" required />
+          <clr-control-error>Введите корректную почту</clr-control-error>
+        </clr-input-container>
+        <clr-input-container>
+            <label>Адресс</label>
+            <input clrInput type="text" name="address" formControlName="address" />
+        </clr-input-container>
+        <clr-input-container>
+            <label>Телефон</label>
+            <input clrInput type="text" mask="(000) 000-000" prefix="+380" formControlName="phone"  />
+        </clr-input-container>
+        <button class="btn btn-primary" type="submit" (click)="order()">Заказать</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>

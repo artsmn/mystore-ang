@@ -1,0 +1,16 @@
+.my-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsl(198, 0%, 20%);
+  padding: 1%;
+}
+.left {}
+.right {}
+.store-name {
+  color: white !important;
+  font-size: large;
+
+}

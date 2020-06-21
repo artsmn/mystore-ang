@@ -1,0 +1,10 @@
+.container {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.my-label {
+  font-size: 21px;
+}
+.my-select {
+  margin: 0 10px;
+}
